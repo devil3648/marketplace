@@ -20,13 +20,24 @@ app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 
-app.get('/', (req, res) => res.send('Marketplace API running'));
+// Serve React frontend
+const clientPath = path.join(__dirname, '../client/dist');
 
-// Basic error handler (e.g. multer file errors)
+app.use(express.static(clientPath));
+
+// React Router fallback
+app.get('*', (req, res) => {
+  res.sendFile(path.join(clientPath, 'index.html'));
+});
+
+// Error handler
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ message: err.message || 'Server error' });
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
