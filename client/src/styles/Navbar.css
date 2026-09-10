@@ -1,0 +1,152 @@
+.navbar {
+  height: 72px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+.navbar-logo span {
+  font-weight: 400;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+}
+
+.navbar-links a {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--text);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-user {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cart-count {
+  min-width: 21px;
+  height: 21px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--surface);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.navbar-login {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navbar-register {
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--surface);
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-register:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.navbar-logout {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 9px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.navbar-logout:hover {
+  background: var(--accent-soft);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .navbar-links {
+    gap: 15px;
+  }
+
+  .navbar-links a {
+    font-size: 13px;
+  }
+
+  .navbar-user {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .navbar {
+    height: auto;
+    min-height: 68px;
+    flex-wrap: wrap;
+    padding: 14px 20px;
+  }
+
+  .navbar-links {
+    order: 3;
+    width: 100%;
+    padding-bottom: 5px;
+    overflow-x: auto;
+  }
+
+  .navbar-actions {
+    margin-left: auto;
+  }
+
+  .navbar-register {
+    padding: 8px 12px;
+  }
+}

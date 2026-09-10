@@ -1,0 +1,121 @@
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(23, 21, 19, 0.08);
+}
+
+.product-image-wrapper {
+  height: 240px;
+  position: relative;
+  background: var(--background);
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.03);
+}
+
+.product-image-placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.product-stock-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.product-content {
+  padding: 18px;
+}
+
+.product-title {
+  margin-bottom: 7px;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.product-description {
+  height: 42px;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.product-price {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.product-stock {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.product-stock.out {
+  color: var(--accent);
+}
+
+.add-cart-button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 13px;
+  background: var(--accent);
+  color: var(--surface);
+  font-size: 12px;
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+}
+
+.add-cart-button:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.add-cart-button:disabled {
+  background: var(--border);
+  color: var(--muted);
+}
